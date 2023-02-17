@@ -1,7 +1,9 @@
-# EECE3039C Semester Project Description
-## Team Keith
+# EECE3039C Semester Project Description - Team Keith
 
-### Vision
+## Links
+[C++ API repository](https://github.com/EECE3093C/team-project-keith-cpp-api)
+
+## Vision
 
 • What is the product?
 
