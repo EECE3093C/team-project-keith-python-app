@@ -4,6 +4,10 @@
 
 Basically what are all the types of user actions that we want to support?
 
+- User can input the file name of a csv file
+- User can click OK to have their csv file processed
+- User can search via keyword in the web API for a data file
+
 ## Python Plotting- Visualizations and Statistics
 
 What are all the types of plots and analyses that we would like to do to the data?
