@@ -28,9 +28,7 @@ class MainWindow(QMainWindow):
         # Caleb Hendrix 2/19/2023
         # This text entry mimicks what we expect users to be able
         # to do when selecting a data file locally.
-        self.entryText = ''
         self.entryLine = QLineEdit()
-        self.entryLine.textChanged.connect(self.entry_line_changed)
 
         # Caleb Hendrix 2/19/2023
         # This text box just allows us to see output that we want
@@ -56,10 +54,4 @@ class MainWindow(QMainWindow):
     # When we press the button we can send some text to the output box.
     # This is also where we can call a C++ function to test that functionality.
     def button_clicked_event(self):
-        self.outputArea.appendPlainText("Data: %s processed!" % self.entryText)
-
-    # Caleb Hendrix 2/19/2023
-    # When someone changes the entry in the line edit we want to track that
-    # change with our state variable.
-    def entry_line_changed(self):
-        self.entryText = self.entryLine.text()
+        self.outputArea.appendPlainText("Data: %s processed!" % self.entryLine.text())
