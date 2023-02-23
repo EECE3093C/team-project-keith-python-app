@@ -1,4 +1,5 @@
 # EECE3039C Semester Project Description - Team Keith
+### Product Manager: Jake Huseman
 
 ## Links
 [C++ API repository](https://github.com/EECE3093C/team-project-keith-cpp-api)
