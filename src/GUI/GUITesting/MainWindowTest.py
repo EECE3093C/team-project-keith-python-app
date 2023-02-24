@@ -7,7 +7,7 @@ Please use this as an example for making unit tests for the widgets to be made.
 import unittest
 from PyQt6.QtTest import QTest
 from PyQt6.QtCore import Qt
-import MainWindow
+from src.GUI.MainWindow import MainWindow
 
 class MainWindowTest(unittest.TestCase):
     def setUp(self):
@@ -31,5 +31,5 @@ class MainWindowTest(unittest.TestCase):
         QTest.mouseClick(processButton, Qt.MouseButton.LeftButton)
         self.assertEqual(self.form.outputArea.toPlainText(), "Data: TestCSV.csv processed!")
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
