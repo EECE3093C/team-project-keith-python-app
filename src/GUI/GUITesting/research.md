@@ -4,7 +4,6 @@ Our web Python web API has several requirements it needs to meet in order to be 
 *Should be able to interact with python. <br />
 ## List of potential WEB APIs
 
-[Varsome](https://landing.varsome.com/varsome-api) <br />
 
 [Macroband](https://help.macrobond.com/technical-information/the-macrobond-api-for-python/) <br />
 
@@ -13,3 +12,16 @@ Our web Python web API has several requirements it needs to meet in order to be 
 [Tornado](https://flask.palletsprojects.com/en/1.1.x/) <br />
 
 [Pyramid](https://trypyramid.com/) <br />
+
+### Tutorials for Each API
+
+[Macroband client Web API Series Provider](https://help.macrobond.com/technical-information/web-api-series-provider/)
+
+[How to create a web API with Python and Flask](https://programminghistorian.org/en/lessons/creating-apis-with-python-and-flask)
+
+
+[How to build a Tornado Rest API](https://medium.com/octopus-labs-london/how-to-build-a-rest-api-in-python-with-tornado-fc717c33824a)
+
+[Pyramid Quick Start Tutorial](https://trypyramid.com/)
+
+
