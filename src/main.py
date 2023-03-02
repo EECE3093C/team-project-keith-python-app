@@ -10,7 +10,7 @@ Change History:
 """
 
 from PyQt6.QtWidgets import QApplication
-from GUI.MainWindow import MainWindow
+from gui.MainWindow import MainWindow
 import sys
 
 if __name__ == "__main__":

@@ -8,9 +8,11 @@ Please delete comments which do not reflect the current state of the file regard
 ------------------------------------------------------------------------------------------------------------
 Change History:
 2/19/2023   Caleb Hendrix   Initial version for iteration 1
+3/2/2023    Caleb Hendrix   Included the test C API call into the button click
 """
 
 from PyQt6.QtWidgets import QMainWindow, QPushButton, QLineEdit, QVBoxLayout, QWidget, QPlainTextEdit
+from dep.x64.Debug import TestPythonAPI as tpa
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -55,3 +57,4 @@ class MainWindow(QMainWindow):
     # This is also where we can call a C++ function to test that functionality.
     def button_clicked_event(self):
         self.outputArea.appendPlainText("Data: %s processed!" % self.entryLine.text())
+        self.outputArea.appendPlainText(str(tpa.add(69, 420)))
