@@ -2,6 +2,7 @@
 Our web Python web API has several requirements it needs to meet in order to be chosen. <br />
 *Something with a query; For example User can get time variant weather. <br />
 *Should be able to interact with python. <br />
+*Should be easy for us to use, with thorough documentation. <br />
 ## List of potential WEB APIs
 
 
