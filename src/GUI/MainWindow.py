@@ -9,41 +9,30 @@ Please delete comments which do not reflect the current state of the file regard
 Change History:
 2/19/2023   Caleb Hendrix   Initial version for iteration 1
 3/2/2023    Caleb Hendrix   Included the test C API call into the button click
+3/7/2023    Caleb Hendrix   Deprecated old window code and added the Analyze button
 """
 
-from PyQt6.QtWidgets import QMainWindow, QPushButton, QLineEdit, QVBoxLayout, QWidget, QPlainTextEdit
-from dep.x64.Debug import TestPythonAPI as tpa
+from PyQt6.QtWidgets import QMainWindow, QWidget, QGridLayout
+from PyQt6.QtCore import Qt
+from gui.AnalyzeButton import AnalyzeButton
 
 class MainWindow(QMainWindow):
     def __init__(self):
-        super().__init__()
+        super(MainWindow, self).__init__()
 
         self.setWindowTitle("Time Series Data Analyzer")
         self.setMinimumWidth(500)
         self.setMinimumHeight(500)
 
-        # Caleb Hendrix 2/19/2023
-        # Just using a simple button for now as the main action
-        self.button = QPushButton("Process my data")
-        self.button.clicked.connect(self.button_clicked_event)
-        
-        # Caleb Hendrix 2/19/2023
-        # This text entry mimicks what we expect users to be able
-        # to do when selecting a data file locally.
-        self.entryLine = QLineEdit()
-
-        # Caleb Hendrix 2/19/2023
-        # This text box just allows us to see output that we want
-        # for testing.
-        self.outputArea = QPlainTextEdit()
-        self.outputArea.resize(500, 250)
+        # The Analyze button controls progress to the pop-up window
+        self.button = AnalyzeButton()
 
         # Caleb Hendrix 2/19/2023
         # This widget creates a vertical layout of the added widgets
-        self.myLayout = QVBoxLayout()
-        self.myLayout.addWidget(self.entryLine)
-        self.myLayout.addWidget(self.button)
-        self.myLayout.addWidget(self.outputArea)
+        # When you add a widget to the layout you may need to adjust
+        # row and column specifications of the others.
+        self.myLayout = QGridLayout()
+        self.myLayout.addWidget(self.button, 0,0, Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignBottom)
 
         # Caleb Hendrix 2/19/2023
         # We have to set all the widgets specified in the layout in
@@ -51,10 +40,3 @@ class MainWindow(QMainWindow):
         self.widget = QWidget()
         self.widget.setLayout(self.myLayout)
         self.setCentralWidget(self.widget)
-
-    # Caleb Hendrix 2/19/2023
-    # When we press the button we can send some text to the output box.
-    # This is also where we can call a C++ function to test that functionality.
-    def button_clicked_event(self):
-        self.outputArea.appendPlainText("Data: %s processed!" % self.entryLine.text())
-        self.outputArea.appendPlainText(str(tpa.add(69, 420)))
