@@ -1,0 +1,3 @@
+[submodule "src/lib"]
+	path = src/lib
+	url = https://github.com/EECE3093C/team-project-keith-cpp-api
