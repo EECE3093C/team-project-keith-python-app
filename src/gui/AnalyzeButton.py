@@ -10,6 +10,7 @@ Change History:
 """
 
 from PyQt6.QtWidgets import QPushButton
+from gui.PopUpWindow import PopUpWindow
 
 class AnalyzeButton(QPushButton):
     def __init__(self):
@@ -20,8 +21,14 @@ class AnalyzeButton(QPushButton):
         self.setFixedSize(75, 25)
 
         self.clicked.connect(self.onButtonClick)
+        self.popup = None
 
     def onButtonClick(self):
         # <Caleb Hendrix>
         # We will need to call the initializer for the pop_up window here.
-        print("Analyzed!")
+        # TODO I think it would be good to make the analyze button non-clickable 
+        # as long as the popupmenu is open, then on close of popup menu, we
+        # enable the button again
+        if self.popup == None:
+            self.popup = PopUpWindow()
+        self.popup.show()
